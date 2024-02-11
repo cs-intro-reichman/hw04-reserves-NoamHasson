@@ -22,12 +22,16 @@ public class ArrayOps {
         int res;
         int min1 = minNumber(array);
         int max1 = maxNumber(array);
+        int count = 0;
         for ( int i = 0; i < (max1-min1); i++ ) {
             for ( int j = 0; j < array.length; j++ ) {
-                if ( array[j] == max1 - lim ) {
-                    res = array[j];
-                    return res;
+                if ( array[j] == max1 - lim && count >=1 ) {
+                        res = array[j];
+                        return res;            
              } 
+             if ( array[j] == max1 ) {
+                count++;
+            }
           }
           lim++;
   }
